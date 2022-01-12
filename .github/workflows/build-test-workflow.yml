@@ -35,4 +35,4 @@ jobs:
       run: |
         pipenv run nosetests
       env:
-        DATABASE_URL: ${{ secrets.DATABASE_URL }}
+        DATABASE_URL: postgresql://localhost/twitter_api_flask
