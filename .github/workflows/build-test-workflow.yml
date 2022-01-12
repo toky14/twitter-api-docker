@@ -32,6 +32,8 @@ jobs:
         pipenv install --dev
     - name: Run migrations
       run: pipenv run flask db upgrade
+      env:
+        DATABASE_URL: ${{ secrets.DATABASE_URL }}
     - name: Test with nose
       run: |
         pipenv run nosetests
