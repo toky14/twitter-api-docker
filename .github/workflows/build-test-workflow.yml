@@ -1,4 +1,4 @@
-name: Python Linter & Tests
+name: Build and Tests
 
 on: push
 
