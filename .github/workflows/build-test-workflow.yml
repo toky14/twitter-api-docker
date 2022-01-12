@@ -38,3 +38,5 @@ jobs:
     - name: Test with nose
       run: |
         pipenv run nosetests
+      env:
+        DATABASE_URL: ${{ secrets.DATABASE_URL }}
