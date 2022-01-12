@@ -12,7 +12,7 @@ jobs:
         env:
           POSTGRES_USER: postgres
           POSTGRES_PASSWORD: postgres
-          POSTGRES_DB: twitter_api_flask_test
+          POSTGRES_DB: twitter_api_flask
         ports:
           - 5432:5432
         # needed because the postgres container does not provide a healthcheck
@@ -31,10 +31,6 @@ jobs:
         python -m pip install --upgrade pip
         pip install pipenv
         pipenv install --dev
-    - name: Run migrations
-      run: pipenv run flask db upgrade
-      env:
-        DATABASE_URL: ${{ secrets.DATABASE_URL }}
     - name: Test with nose
       run: |
         pipenv run nosetests
